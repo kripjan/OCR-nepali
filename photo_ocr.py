@@ -4,14 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 
 reader = easyocr.Reader(['ne'], gpu=True) 
-
-# Load image
 image = cv2.imread("plate.jpg")
-if image is None:
-    print("Failed to load image.")
-    exit()
-
-# Run OCR
 results = reader.readtext(image, detail=1)
 
 # Convert to PIL format
